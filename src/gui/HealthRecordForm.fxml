@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="400.0" prefWidth="350.0" spacing="15.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.HealthRecordController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+    <Label text="Add New Health Record">
+        <font>
+            <Font size="18.0" />
+        </font>
+    </Label>
+    <GridPane hgap="10.0" vgap="10.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="120.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="200.0" />
+        </columnConstraints>
+        <Label text="Record Date:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <DatePicker fx:id="recordDatePicker" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+        <Label text="Diagnosis:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <TextField fx:id="diagnosisField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+        <Label text="Treatment:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <TextArea fx:id="treatmentArea" prefHeight="80.0" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+        <Label text="Notes:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+        <TextArea fx:id="notesArea" prefHeight="80.0" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+    </GridPane>
+    <HBox alignment="CENTER_RIGHT" spacing="10.0" style="margin-top: 20px;">
+        <Button fx:id="saveButton" mnemonicParsing="false" onAction="#handleSaveHealthRecord" text="Save" />
+        <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#handleCancel" text="Cancel" />
+    </HBox>
+</VBox>
